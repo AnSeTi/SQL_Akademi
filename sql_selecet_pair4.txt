@@ -1,0 +1,93 @@
+--------------------------
+----------SELECT----------
+--------------------------
+Veritabanında veri seçmek için kullanılır. Bu işleme "Sorgulama" adı verilir.
+Select komutunun ürettiği sonuçlar "Sonuç Kümesi" adında bir tabloda saklanır.
+
+Kullanım örneği; sutunN içerisinden veri seçmek istediğimiz tablonun alan adlarıdır.
+------------------------------------
+SELECT sutun1, sutun2, ... , sutunN
+FROM tablo_adı;
+------------------------------------
+
+Tabloda ki tüm alanları seçme
+------------------------------------
+SELECT*FROM tablo_adı;
+------------------------------------
+
+--------------------------
+----------ÖRNEK-----------
+--------------------------
+
+-"Musteriler" Tablosu
+-----------------------------------------------------------------------------
+kullanici_id	ad		soyad		ulke	sehir	   posta_kodu
+-----------------------------------------------------------------------------
+06112		Fatih		Bozkurt		Turkey	Ankara	   06950
+06113		Beycan		Gözenoglu	Turkey	Ankara	   06960
+34114		Volkan		Kahraman	Turkey	İstanbul   34865
+34115		Selahattin Onur	Sataner		Turkey	İstanbul   34870
+34116		Şeyma Hilal	Özkır		Turkey	İstanbul   34880
+-----------------------------------------------------------------------------
+
+İlgili sütunları seçmek için;
+------------------------------------
+SELECT ad, soyad FROM Musteriler
+------------------------------------
+
+Bütün sütunları seçmek için;
+------------------------------------
+SELECT*FROM Musteriler;
+------------------------------------
+
+------------------------------------
+SELECT TOP;
+
+İstenilen sayıda kayıt görüntülemek için kullanılır.
+Örnek olarak "Musteriler" tablosunda ki ilk 3 kaydı aşağıda ki gibi listeleyebiliriz.
+
+SELECT TOP * 3 FROM Musteriler
+------------------------------------
+
+------------------------------------
+SELECT INTO;
+
+Bir tablodan veri seçer ve yeni bir tabloya bunu ekler.
+Örnek olarak "Musteriler" tablosunun yedeğini "yedekMusteriler" olarak alalım.
+
+SELECT * INTO yedekMusteriler FROM Musteriler
+------------------------------------
+
+------------------------------------
+SELECT DISTINCT;
+
+Özgün sorgular oluşturmak için kullanılır.
+Tabloda sürekli tekrar eden değerler varsa eğer, bu değerlerden birer adet eçebiliriz.
+Tekrar eden değerler karışıklık yaratabilir. Kaç farklı tür değere sahip olduğumuzu DISTICT ile öğreniriz.
+Müşteriler tablomuzda kaç farklı şehirden kayıt olduğunu öğrenmek için;
+
+SELECT DISTINCT sehir FROM Musteriler
+------------------------------------
+
+------------------------------------
+SELECT WHERE;
+
+Sütun içerisinde belirli değerlere sahip girdileri gertirmek için kullanabiliriz
+Musteriler tablomuzdan sadece "Ankara" bilgisine sahip girdileri getirmek için
+
+SELECT * from Musteriler WHERE sehir=Ankara
+------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
