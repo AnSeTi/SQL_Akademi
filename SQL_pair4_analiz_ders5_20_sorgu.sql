@@ -142,7 +142,7 @@ select name, unit_price,stock, product_rating from products pr
 order by product_rating desc, stock asc
 
 --kaç alışverişte taksitlendirme yapılmış
-select count(o.id)"Taksitlendirilmiş Sipariş Sayısı" from orders o
+select count(o.id)"Taksittlendirilmiş Sipariş Sayısı" from orders o
 inner join payments py
 on o.payment_id = py.id
 inner join installments i
